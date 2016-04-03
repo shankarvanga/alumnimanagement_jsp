@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+   version="2.5"> 
+  
+	<servlet>
+		<servlet-name>alumini</servlet-name>
+		<servlet-class>net.alumini.action.AluminiServlet</servlet-class>
+	<!--
+		<init-param>
+			<param-name>driverClass</param-name>
+			<param-value>com.mysql.jdbc.Driver</param-value>
+		</init-param>
+		<init-param>
+			<param-name>url</param-name>
+			<param-value>jdbc:mysql://localhost:3306/alumni</param-value>
+		</init-param>
+		<init-param>
+			<param-name>username</param-name>
+			<param-value>root</param-value>
+		</init-param>
+		<init-param>
+			<param-name>password</param-name>
+			<param-value></param-value>
+		</init-param>
+		-->
+		<load-on-startup>1</load-on-startup>
+	</servlet>  
+	<servlet>
+		<servlet-name>admin</servlet-name>
+		<servlet-class>net.alumini.action.AdminServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>admin</servlet-name>
+		<url-pattern>/ad</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>alumini</servlet-name>
+		<url-pattern>/do</url-pattern>
+	</servlet-mapping>
+  
+	<welcome-file-list>
+		 <welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>  
+   
+</web-app>

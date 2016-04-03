@@ -1,0 +1,140 @@
+#container
+{
+	width: 900px;
+	margin: 10px auto;
+	line-height: 130%;
+	margin-bottom:10px;
+}
+
+#top
+{
+	background-color: #ddd;
+	border-bottom: 1px solid gray;
+	margin-bottom: 5px;
+}
+
+#top h1
+{
+	padding: 0;
+	margin: 0;
+}
+
+#search-bar {
+	border:#CCCCCC solid 1px;
+	border-bottom:#000000 thin 1px;
+	margin-bottom:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:10px;
+	background-color:#FFFFFF;
+	-moz-border-radius: 5px 5px 5px 5px; 
+	-webkit-border-radius:5px 5px 5px 5px; 
+}
+
+#leftnav
+{
+	float: left;
+	width: 140px;
+	margin: 0;
+	
+}
+
+#rightnav
+{
+	float: right;
+	width: 130px;
+	margin: 0;
+	padding: 1em;
+	background:#6699FF;
+}
+
+#content
+{
+	margin-left: 160px;
+	border-left:#CCCCCC solid 1px;
+	border-right:#CCCCCC solid 1px;
+	margin-right: 155px;
+	margin-bottom:10px;
+	padding: 1em;
+}
+
+#footer
+{
+	clear: both;
+	padding: 10px 10px 10px 10px;
+	border-top:#000000 solid 2px;
+	border-bottom:#CCCCCC solid 1px;
+	border-left:#CCCCCC solid 1px;
+	border-right: #CCCCCC solid 1px;
+	-moz-border-radius: 0 0 5px 5px; 
+	-webkit-border-radius:0 0 5px 5px; 
+}
+
+#box-01 {
+	margin-left:5px;
+	margin-top:10px;
+	-moz-border-radius: 5px 5px 5px 5px; 
+	-webkit-border-radius:5px 5px 5px 5px; 
+
+}
+
+#img-bredcrum {
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:5px;
+}
+
+#leftnav p, #rightnav p { 
+	margin: 0 0 1em 0; 
+	}
+	
+#content h2 { 
+	margin: 0 0 .5em 0; 
+	}
+
+#login_box{
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-left:5px;
+}
+
+#login_left {
+	float:left;
+	width:250px;
+	border:#2586d7 1px solid;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+
+}
+
+#login_right {
+	float:right;
+	width:250px;
+	border:#2586d7 1px solid;
+	padding-left:5px;
+	padding-right:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#log_now {
+	font-family: 'Trebuchet MS', 'Lucida Grande', Arial, sans-serif;
+	background:#2586d7 left;
+	padding-left:5px;
+	padding-top:5px;
+	padding-bottom:5px;
+	text-align:left;
+	margin-bottom:5px;
+	text-decoration:underline;
+}
+/*
+Shop CSS **********************************************************************************
+*/	
+
+a img{border:none;}
+
+.bred {
+height:20px;
+}
