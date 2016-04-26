@@ -1,1 +1,1 @@
-<div class="heading">Your Profile Edited Successfully....</div>
+<div class="heading">Your Profile Edited Successfully</div>

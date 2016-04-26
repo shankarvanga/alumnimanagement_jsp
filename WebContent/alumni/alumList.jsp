@@ -1,4 +1,4 @@
-<h2>Alumni List :-)</h2>
+<h2>Alumni List</h2>
 <%
 //String sId=(String)session.getAttribute("s_id");
 java.util.ArrayList al=(java.util.ArrayList)session.getAttribute("aLLL");
@@ -8,9 +8,6 @@ for(int i=0;i<size;i++){
 java.util.ArrayList one=(java.util.ArrayList)al.get(i);
 %>
 <div class="box1">
-<div class="photo">
-<img width="100" height="80" src="../images/anon.gif" alt="Friends Photo" />
-</div>
 <div class="heading"><%=(String)one.get(0)%></div>
 <div class="box_content">
 <b>Email: :</b><%=(String)one.get(4)%><br/>

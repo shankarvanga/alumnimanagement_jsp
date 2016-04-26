@@ -1,5 +1,9 @@
-<%@ page import="java.util.*;"%>
-<%
+<% response.setHeader("Cache-Control","no-store"); //HTTP 1.1 
+ response.setHeader("Pragma","no-cache"); //HTTP 1.0 
+ response.setDateHeader ("Expires", 0); //prevents caching at the proxy server  
+%>
+<%@ page import="java.util.*"%>
+<% 
 ArrayList us=(ArrayList)session.getAttribute("ap");
 String id=(String)us.get(0);
 String name=(String)us.get(1);
@@ -7,7 +11,7 @@ String name=(String)us.get(1);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tabbed Content</title>
+<title>Alumni</title>
 <script src="tabcontent.js" type="text/javascript"></script>
 <style>
 ul.tabs
@@ -85,7 +89,7 @@ body
 <ul class="tabs" data-persist="true">
 <li><a href="../do?MOD=ALUM&Action=Content">Welcome,&nbsp;<%=name%></a></li>
     <li><a href="../do?MOD=ALUM&Action=Friend&id=<%=id%>">Find Friend</a></li>
-	<<li><a href="../do?MOD=ALUM&Action=View&id=<%=id%>">View Scrap</a></li>
+	<li><a href="../do?MOD=ALUM&Action=View&id=<%=id%>">View Scrap</a></li>
 	<li><a href="../do?MOD=ALUM&Action=Edit&id=<%=id%>">Edit Details</a></li>
 	<li><a href="../do?MOD=ALUM&Action=Addach&id=<%=id %>">Add Achievement</a></li>
 	<li><a href="../do?MOD=ALUM&Action=logOff">Logout</a></li>

@@ -1,207 +1,247 @@
-<%@ taglib uri="http://java.sun.com/jstl/core" prefix="c"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<style>
+
+body{
+  background: #4E535B;
+  font-family: 'Montserrat', Arial;
+  font-size: 1em;
+}
+h2{
+  text-align: center;
+  color: #F1F2F4;
+  text-shadow: 0 1px 0 #000;
+}
+a{
+  text-decoration: none; color: #EC5C93; 
+}
+.ribbon{
+  background: rgba(200,200,200,.5);
+  width: 50px;
+  height: 70px;
+  margin: 0 auto;
+  position: relative;
+  top: 19px;
+  border: 1px solid rgba(255,255,255,.3);
+  border-top: 2px solid rgba(255,255,255,.5);
+  border-bottom: 0;  
+  border-radius: 5px 5px 0 0;
+  box-shadow: 0 0 3px rgba(0,0,0,.7); 
+}
+.ribbon:before{
+  content:"";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #4E535B;
+  border: 4px solid #cfd0d1;
+  margin: 18px auto;
+  box-shadow: inset 0 0 5px #000, 0 0 2px #000, 0 1px 1px 1px #A7A8AB;
+  border-radius: 100%;
+}
+.login{
+  background: #F1F2F4;
+  border-bottom: 2px solid #C5C5C8;
+  border-radius: 5px;
+  text-align: center;
+  color: #36383C;
+  text-shadow: 0 1px 0 #FFF;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 15px 40px 20px 40px;
+  box-shadow: 0 0 3px #000;
+}
+.login:before{
+  content:"";
+  display: block;
+  width: 70px;
+  height: 4px;
+  background: #4E535B;
+  border-radius: 5px;
+  border-bottom: 1px solid #FFFFFF;
+  border-top: 2px solid #CBCBCD;
+  margin: 0 auto;
+}
+h1{
+  font-size: 1.6em;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+p{
+  font-family:'Helvetica Neue';
+  font-weight: 300;
+  color: #7B808A;
+  margin-top: 0;
+  margin-bottom: 30px;
+}
+.input{
+  text-align: right;
+  background: #E5E7E9;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: inset 0 0 3px #65686E;
+  border-bottom: 1px solid #FFF;
+}
+input{
+  width: 260px;
+  background: transparent;
+  border: 0;
+  line-height: 3.6em;
+  box-sizing: border-box;
+  color: #71747A;
+  font-family:'Helvetica Neue';
+  text-shadow: 0 1px 0 #FFF;
+}
+input:focus{
+  outline: none;
+}
+.blockinput{
+  border-bottom: 1px solid #BDBFC2;
+  border-top: 1px solid #FFFFFF;
+}
+.blockinput:first-child{
+  border-top: 0;
+}
+.blockinput:last-child{
+  border-bottom: 0;
+}
+.blockinput i{
+  padding-right: 10px;
+  color: #B1B3B7;
+  text-shadow: 0 1px 0 #FFF;
+}
+::-webkit-input-placeholder {
+  color: #71747A;
+  font-family:'Helvetica Neue';
+  text-shadow: 0 1px 0 #FFF;
+}
+button{
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  line-height: 2em;
+  background: rgba(114,212,202,1);
+  border-radius: 5px;
+  border:0;
+  border-top: 1px solid #B2ECE6;
+  box-shadow: 0 0 0 1px #46A294, 0 2px 2px #808389;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  text-shadow: 0 1px 2px #21756A;
+}
+button:hover{
+ background: linear-gradient(to bottom, rgba(107,198,186,1) 0%,rgba(57,175,154,1) 100%);  
+}
+button:active{
+  box-shadow: inset 0 0 5px #000;
+  background: linear-gradient(to bottom, rgba(57,175,154,1) 0%,rgba(107,198,186,1) 100%); 
+}
+
+/* ### TEST PASS GOOGLE IO ### */
+
+hr{
+  border-top: 1px solid rgba(0,0,0,.5);
+  border-bottom: 1px solid rgba(255,255,255,.5);
+  border-left: 0;
+  border-right: 0;
+  margin-top: 30px;
+}
+
+.io{
+  padding: 0;
+  padding-bottom: 10px;
+}
+.press{
+  background: #D73D32;
+  height: 40px;
+  margin-top: -7px;
+  border-radius: 5px 5px 0 0;
+  text-align: left;
+  line-height: 40px;
+  padding: 0 10px;
+  color: #FFF;
+  text-shadow: none;
+}
+.press span{
+  float: right;
+  font-family: Georgia;
+}
+.io:before{
+  position: relative;
+  top: 15px;
+  border-top: 2px solid #E78B84;
+  border-bottom: 1px solid #6C1E19;
+}
+.ior{
+  position:relative;
+  z-index: 1;
+}
+.io img{
+  width: 150px;
+  border-radius: 100%;
+  border: 4px solid 
+  margin-top: 10px;
+  border: 4px solid #FFF;
+  margin: 18px auto 0;
+  box-shadow: 0 1px 1px 1px #A7A8AB;
+}
+.io h2{
+  margin-top: 0;
+}
+.io p{
+  font-size: 1.5em;
+  margin-bottom: 5px;
+}
+
+</style>
+
+
+
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<link href="css/style.css" rel="stylesheet" type="text/css" />
-<link href="css/mystyle.css" rel="stylesheet" type="text/css" />
-<link href="css/menu-css.css" rel="stylesheet" type="text/css" />
-<script src="js/yav.js"  language="javascript"></script>
-<script src="js/yav-config.js" language="javascript"></script>
-<script src="js/utils-functions.js"  language="javascript"></script>
+  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://sscol.jebal.comuv.com/css/font.css">
 </head>
-
 <body>
-<div id="container">
-<div id="top">
-<jsp:include page="include/header.jsp" flush="true" />
-</div>
-<div id="search-bar">
-<a href="#" style="color:#000000"><b>Home</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="" style="color:#000000"><b>The Institute</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="" style="color:#000000"><b>Academics</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="" style="color:#000000"><b>Quick Links</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="" style="color:#000000"><b>Happinings</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="" style="color:#000000"><b>Admissions</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="" style="color:#000000"><b>Others</b></a>&nbsp;&nbsp;&nbsp;&nbsp;
-</div>
-<div id="leftnav">
+  <h2>Alumni <a href="http://dribbble.com/shots/899672-Login-Form"> Management</a> System </h2>
+  <div class="ribbon"></div>
+  <div class="login">
+  <h1>Sign up</h1>
+  <p>Welcome</p>
+  <form id="form1" name="loginAluminiForm" method="post" action="do?MOD=ALUM&Action=Reg">
+    <div class="input">
+      <div class="blockinput">
+        <i class="icon-envelope-alt"></i><input type="text" placeholder="sname" name="name">
+      </div>
+      <div class="blockinput">
+        <i class="icon-envelope-alt"></i><input type="password" placeholder="Create a  Pasword" name="pass">
+      </div>
+      <div class="blockinput">
+        <i class="icon-envelope-alt"></i><input type="text" placeholder="bname" name="bname">
+      </div>
+      <div class="blockinput">
+        <i class="icon-envelope-alt"></i><input type="number" placeholder="Year of passing" name="yop">
+      </div>
+<div class="blockinput">
+        <i class="icon-unlock"></i><input type="text" placeholder="Roll Number" name="rollno">
+      </div>
 
-<jsp:include page="include/left-menu.jsp" flush="true" />
+      <div class="blockinput">
+        <i class="icon-unlock"></i><input type="text" placeholder="Address" name="add">
+      </div>
+<div class="blockinput">
+        <i class="icon-unlock"></i><input type="mail" placeholder="Email" name="email">
+      </div>
+<div class="blockinput">
+        <i class="icon-unlock"></i><input type="number" placeholder="Phone number" name="mob">
+      </div>
 
-<div  id="box-01">
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-</div>
-<div  id="box-01">
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut.
-</div>
-
-</div>
-<div id="rightnav">
-<table cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="middle" width="200" height="30"><strong>Admissions</strong></td>
-  </tr>
-  <tr>
-    <td><ul>
-      <li><a href="http://www.ssvps.com/fe.html">FE</a> </li>
-      <li><a href="http://www.ssvps.com/se.html">SE</a> </li>
-      <li><a href="http://www.ssvps.com/me.html">ME</a> </li>
-      <li><a href="http://www.ssvps.com/mba.html">Management   Studies</a></li>
-    </ul></td>
-  </tr>
-</table>
-
-<table cellspacing="0" cellpadding="0">
-  <tr>
-    <td align="middle" width="185" height="30"><strong>Happenings</strong></td>
-  </tr>
-  <!----photo.php to be linked----->
-  <tr>
-    <td><ul>
-      <li><a href="http://ssvps.com/photo.html">Photo   Gallery</a> </li>
-      <li><a href="http://www.nmu.ac.in/online%20result/aspx/online%20result.aspx" target="mainframe1">Results</a> </li>
-      <li><a href="http://www.ssvps.com/construction.html">Events</a> </li>
-    </ul></td>
-  </tr>
-</table>
-<p>&nbsp;</p>
-</div>
-
-<div id="content">
-  <div class="heading">Register Alumni  </div>
-  <br/>
-A Premier Institute as a dynamic entity contributing in Human Resource Development and Solution Provider to Industry and Society. 
-<br/>
-<form id="form1" name="form1" method="post" action="do?MOD=ALUM&Action=Reg">
-  <table width="511" border="0">
-    <tr>
-      <td colspan="4" bgcolor="#000000"><font color="#FFFFFF">&nbsp;&nbsp;<b>Alumni Registration </b></font></td>
-      </tr>
-    <tr>
-      <td width="19">&nbsp;</td>
-      <td width="124">&nbsp;</td>
-      <td width="5">&nbsp;</td>
-      <td width="335">&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Alumni Name </td>
-      <td>:</td>
-      <td><label>
-        <input name="name" type="text" id="sname" size="30" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Password</td>
-      <td>:</td>
-      <td><label>
-        <input name="pass" type="password" id="pass" size="30" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Branch Name </td>
-      <td>:</td>
-      <td><label>
-        <select name="bname">
-			<option value="Computer">Computer Engineering</option>
-			<option value="Mech">Mech Engineering</option>
-			<option value="IT">Information Technology</option>
-			<option value="Prod">Production Engineering</option>
-        </select>
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Year of Passing </td>
-      <td>:</td>
-      <td><label>
-        <select name="yop">
-		<%
-		for(int i=1980;i<2009;i++){
-		%>
-		<option value="<%=i%>"><%=i%></option>
-		<%
-		}
-		%>
-		</select>
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Address</td>
-      <td>:</td>
-      <td><label>
-        <textarea name="add" cols="40" rows="5" id="add"></textarea>
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>Mobile No. </td>
-      <td>:</td>
-      <td><label>
-        <input name="mob" type="text" id="mob" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>E-mail</td>
-      <td>:</td>
-      <td><label>
-        <input name="email" type="text" id="email" />
-      </label></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td><label>
-        <div align="right">
-          <input type="reset" name="Submit2" value="Reset" />
-          </div>
-      </label></td>
-      <td>&nbsp;</td>
-      <td><label>
-        <input type="submit" name="Submit" value="Register Now" />
-      </label></td>
-    </tr>
-    <tr>
-      <td colspan="4">&nbsp;</td>
-      </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
-</form>
-<br/>
-<br/>
-
-<!-- 
-Closing of Prod
--->
-
-
-</div>
-<!--
-Closing of Conetent
- -->
-
-
-<div id="footer">
-<jsp:include page="include/footer.jsp" flush="true" />
-</div>
-</div>
+    </div>
+    
+    <button>Create account</button>
+  </form>
+  </div>
+  <hr>
+  <br><br>
+  
+  </div>
+ 
 </body>
-</html>

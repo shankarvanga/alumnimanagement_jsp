@@ -1,4 +1,4 @@
-<%@ page import="java.util.*;"%>
+<%@ page import="java.util.*"%>
 <%session.setAttribute("content_page", "logged.jsp");
 ArrayList a = (ArrayList)session.getAttribute("queryResult");%>
 <div><a href="../ad?Action=download">Download pdf</a></div>

@@ -201,7 +201,7 @@ hr{
   <link rel="stylesheet" href="http://sscol.jebal.comuv.com/css/font.css">
 </head>
 <body>
-  <h2>Alumni <a href="http://dribbble.com/shots/899672-Login-Form"> Management</a> System </h2>
+  <h2>Alumni <a href=""> Management</a> System </h2>
   <div class="ribbon"></div>
   <div class="login">
   <h1>Alumni Login</h1>
@@ -215,7 +215,7 @@ hr{
         <i class="icon-unlock"></i><input type="password" placeholder="Password" name="userPass">
       </div>
     </div>
-    <a href="">Register Now? </a>
+    <a href="alumReg.jsp">Register Now? </a>
     <button>Login</button>
   </form>
   </div>
@@ -223,9 +223,9 @@ hr{
   <br><br>
   <div class="ribbon"></div>
   <div class="login">
-  <h1>Student Login</h1>
+  <h1>Admin Login</h1>
   <p>Welcome</p>
-  <form id="form1" name="loginStudentForm" method="post" action="ad?Action=Login">
+  <form id="form1" name="loginAdminForm" method="post" action="ad?Action=Login">
     <div class="input">
       <div class="blockinput">
         <i class="icon-envelope-alt"></i><input type="mail" placeholder="Username" name="userName">
@@ -234,7 +234,6 @@ hr{
         <i class="icon-unlock"></i><input type="password" placeholder="Password" name="userPass">
       </div>
     </div>
-    <a href="studReg.jsp">Register Now? </a>
     <button>Login</button> 
 </form>
   </div>

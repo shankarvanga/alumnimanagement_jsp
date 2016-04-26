@@ -1,4 +1,4 @@
-<%@ page import="java.util.*;"%>
+<%@ page import="java.util.*"%>
 <%
 ArrayList x=(ArrayList)session.getAttribute("achdata");
 String id=(String)x.get(0);
